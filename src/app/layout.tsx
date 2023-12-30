@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import React from "react";
+import MainHeader from "@/components/main-header";
 
 export const metadata: Metadata = {
   title: 'Sample Foodie Application',
@@ -32,7 +33,7 @@ export default function RootLayout({children}:
           ></path>
         </svg>
       </div>
-
+      <MainHeader/>
       {children}
       </body>
       </html>
