@@ -4,7 +4,7 @@ import logoImg from '@/assets/logo.png';
 import classes from './main-header.module.css'
 import Image from "next/image";
 import MainHeaderBackground from "@/components/main-header/main-header-background";
-import NavLink from "@/components/main-header/nav-link";
+import NavLinks from "@/components/main-header/nav-links";
 
 const MainHeader = () => {
     return (
@@ -20,7 +20,7 @@ const MainHeader = () => {
                     NextLevel Food
                 </Link>
 
-                <NavLink/>
+                <NavLinks/>
             </header>
         </>
     );

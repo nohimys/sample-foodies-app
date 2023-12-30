@@ -1,10 +1,10 @@
 'use client'
 
 import Link from "next/link";
-import classes from './nav-link.module.css'
+import classes from './nav-links.module.css'
 import {usePathname} from "next/navigation";
 
-const NavLink = () => {
+const NavLinks = () => {
     const pathName = usePathname();
 
     return (
@@ -27,4 +27,4 @@ const NavLink = () => {
     );
 }
 
-export default NavLink;
+export default NavLinks;
