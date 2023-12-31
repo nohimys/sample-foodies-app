@@ -3,7 +3,11 @@
 import {redirect} from "next/navigation";
 import {saveMeal} from "@/lib/meals";
 
-export const shareMeal = async (formData: any) => {
+function isInvalidText(text: string) {
+    return !text || text.trim() === '';
+}
+
+export const shareMeal = async (prevState: any, formData: any) => {
 
     const meal = {
         title: formData.get('title'),
@@ -16,6 +20,21 @@ export const shareMeal = async (formData: any) => {
 
     //This will print on Server Console
     // console.log(meal);
+
+    if (
+        isInvalidText(meal.title) ||
+        isInvalidText(meal.summary) ||
+        isInvalidText(meal.instructions) ||
+        isInvalidText(meal.creator) ||
+        isInvalidText(meal.creator_email) ||
+        !meal.creator_email.includes('@') ||
+        !meal.image ||
+        meal.image.size === 0
+    ) {
+        return {
+            message: 'Invalid input.',
+        };
+    }
 
     await saveMeal(meal);
     redirect('/meals');
