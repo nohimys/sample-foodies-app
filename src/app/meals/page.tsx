@@ -6,6 +6,10 @@ import {getMeals} from "@/lib/meals";
 import {Suspense} from "react";
 import MealsLoadingPage from "@/app/meals/loading-not-used";
 
+export const metadata = {
+    title: 'All Meals',
+    description: 'Browse the delicious meals shared by our vibrant community.',
+};
 const Meals = async () => {
     const meals = await getMeals();
 
