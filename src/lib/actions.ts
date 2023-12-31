@@ -1,5 +1,8 @@
 'use server'
 
+import {redirect} from "next/navigation";
+import {saveMeal} from "@/lib/meals";
+
 export const shareMeal = async (formData: any) => {
 
     const meal = {
@@ -12,5 +15,8 @@ export const shareMeal = async (formData: any) => {
     }
 
     //This will print on Server Console
-    console.log(meal);
+    // console.log(meal);
+
+    await saveMeal(meal);
+    redirect('/meals');
 }
