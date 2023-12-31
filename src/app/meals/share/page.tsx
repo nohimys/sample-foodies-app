@@ -1,23 +1,10 @@
+'use client'
+
 import classes from './page.module.css';
 import ImagePicker from "@/components/meals/image-picker";
+import {shareMeal} from "@/lib/actions";
 
 export default function ShareMealPage() {
-
-    async function shareMeal(formData: any) {
-        'use server';
-
-        const meal = {
-            title: formData.get('title'),
-            summary: formData.get('summary'),
-            instructions: formData.get('instructions'),
-            image: formData.get('image'),
-            creator: formData.get('name'),
-            creator_email: formData.get('email')
-        }
-
-        //This will print on Server Console
-        console.log(meal);
-    }
 
     return (
         <>
